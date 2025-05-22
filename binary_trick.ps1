@@ -2,12 +2,12 @@
 . .\Write-LedDigits.ps1
 . .\Write-AnimatedMessage.ps1
 
-# Ask for a number between 6 to 10
+# Ask for a number between 5 to 9
+# 2 ^ 5  has   32 numbers |  6 display boards | Each board has  16 numbers
 # 2 ^ 6  has   64 numbers |  6 display boards | Each board has  32 numbers
 # 2 ^ 7  has  128 numbers |  7 display boards | Each board has  64 numbers
 # 2 ^ 8  has  256 numbers |  8 display boards | Each board has 128 numbers
 # 2 ^ 9  has  512 numbers |  9 display boards | Each board has 256 numbers
-# 2 ^ 10 has 1024 numbers | 10 display boards | Each board has 512 numbers
 do{
     Write-Host
 
@@ -90,7 +90,7 @@ $number_on_mind = 0
 # Initialize question counter to 0.
 $question = 0
 
-$boards.Keys | Sort-Object {Get-Random} | ForEach-Object {
+$boards.Keys | Sort-Object { Get-Random } | ForEach-Object {
 
     # Save the current key to a weight variable for easy reference later.
     $weight = $_
